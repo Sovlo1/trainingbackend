@@ -39,15 +39,15 @@ app.post('/links', (req, res) => {
     res.status(201).send("Added a link")
 })
 
-const sslKeys = {
-    keys: fs.readFileSync('./.cert/cert-key.pem'),
-    cert: fs.readFileSync('./.cert/cert.pem')
-}
-https.createServer(sslKeys, app).listen(httpPort, () => {
-    console.log(`Listening to port ${httpPort}`)
-})
+// const sslKeys = {
+//     keys: fs.readFileSync('./.cert/cert-key.pem'),
+//     cert: fs.readFileSync('./.cert/cert.pem')
+// }
+// https.createServer(sslKeys, app).listen(httpPort, () => {
+//     console.log(`Listening to port ${httpPort}`)
+// })
 
 
-// app.listen(port, () => {
-//     console.log(`Listening port ${port}`);
-// });
+app.listen(port, () => {
+    console.log(`Listening port ${port}`);
+});
